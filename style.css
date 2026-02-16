@@ -1,0 +1,64 @@
+<script>
+var i = 0;
+var text = "DRAGON X AYUSH";
+var speed = 120;
+
+function typeEffect() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeEffect, speed);
+  }
+}
+
+window.onload = typeEffect;
+</script>
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #0f0f2d, #000);
+  font-family: monospace;
+  color: #00f7ff;
+}
+
+.glow {
+  font-size: 40px;
+  color: #00f7ff;
+  text-shadow:
+    0 0 5px #00f7ff,
+    0 0 10px #00f7ff,
+    0 0 20px #ff00ff;
+}
+
+.card {
+  border: 2px solid #ff00ff;
+  
+ .rgb-text {
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        violet,
+        red
+    );
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rgbMove 5s linear infinite;
+    text-shadow: 0 0 10px rgba(255,255,255,0.6),
+                 0 0 20px rgba(255,255,255,0.4);
+}
+
+@keyframes rgbMove {
+    0% { background-position: 0% }
+    100% { background-position: 400% }
+}
+ 
